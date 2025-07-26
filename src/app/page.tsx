@@ -1,103 +1,121 @@
+// src/app/page.tsx
+"use client";
+
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function HomePage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await fetch("/api/products");
+      const data = await res.json();
+      if (data.success) setProducts(data.products.slice(0, 3));
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-white text-[#1B3F5F]">
+      <Navbar />
+      {/* Hero */}
+      <section className="bg-[#eaf3f7] py-16 px-4 text-center">
+        <div className="bg-[#eaf3f7]">
+          <Image
+            src="/logo.png"
+            alt="Sarveswary Logo"
+            width={200}
+            height={80}
+            className="mx-auto mb-4 "
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#0b3954]">
+          Don’t worry with Sarveswary
+        </h1>
+        <p className="mt-4 text-lg text-[#3182a8]">
+          Veterinary pharmaceutical solutions for a healthier tomorrow.
+        </p>
+        <Link href="/products">
+          <button className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-full shadow">
+            Explore Products
+          </button>
+        </Link>
+      </section>
+      {/* About */}
+      <section className="py-14 px-4 sm:px-6 bg-white text-center">
+        <h2 className="text-xl sm:text-2xl font-bold mb-10">Why Sarveswary?</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-col items-center">
+            <div className="text-4xl mb-2">💊</div>
+            <p>Trusted Veterinary Products</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="text-4xl mb-2">⚡</div>
+            <p>Fast & Reliable Delivery</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="text-4xl mb-2">🏥</div>
+            <p>WHO-GMP Certified</p>
+          </div>
+        </div>
+      </section>
+      {/* 🌟 Featured Products */}
+      <section className="py-16 px-4 sm:px-6 bg-[#F9FAFB]">
+        <h2 className="text-xl sm:text-2xl font-bold text-center mb-10">
+          Featured Products
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {products.map((p: any) => (
+            <div
+              key={p._id}
+              className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm"
+            >
+              {p.imageUrl && (
+                <img
+                  src={`/products/${p.imageUrl}.png`}
+                  alt={p.name}
+                  className="w-full h-60 object-contain rounded mb-4"
+                />
+              )}
+              <h3 className="font-semibold text-lg text-[#1B3F5F]">{p.name}</h3>
+              <p className="text-sm text-gray-700 mb-1">
+                <strong>Category:</strong> {p.category}
+              </p>
+              {/* <p className="text-sm text-gray-600 mb-1">
+                <strong>Composition:</strong> {p.composition}
+              </p>
+              <p className="text-sm text-gray-600 mb-1">
+                <strong>Dosage:</strong> {p.dosage}
+              </p>
+              <p className="text-sm text-gray-600 mb-2">
+                <strong>Indications:</strong> {p.indications}
+              </p>
+              {p.description && (
+                <p className="text-xs text-gray-500 italic">{p.description}</p>
+              )} */}
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Contact CTA */}
+      <section className="py-16 px-4 sm:px-6 bg-[#E6F2F6] text-center">
+        <h2 className="text-xl sm:text-2xl font-bold mb-4">Need help?</h2>
+        <p className="mb-6 text-[#4CA1B6] text-base sm:text-lg">
+          Reach out to our support or drop us a message.
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/contact"
+          className="inline-block bg-[#FFD700] text-[#1B3F5F] font-semibold px-6 py-3 rounded-full hover:bg-yellow-400 transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Contact Us
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }

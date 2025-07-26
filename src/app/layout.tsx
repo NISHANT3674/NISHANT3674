@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// ✅ Use consistent variable names
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +28,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* Navigation */}
+        {/* <nav className="p-4 border-b">
+          <a
+            href="/products"
+            className="text-blue-600 hover:underline px-4 py-2"
+          >
+            Products
+          </a>
+        </nav> */}
+
+        {/* Page Content */}
+        <main className="px-4">{children}</main>
       </body>
     </html>
   );

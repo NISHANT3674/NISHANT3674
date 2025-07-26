@@ -1,0 +1,56 @@
+"use client";
+
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
+export default function LoginPage() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const res = await signIn("credentials", {
+      redirect: false,
+      email,
+      password,
+    });
+
+    if (res?.ok) {
+      router.push("/admin"); // redirect to admin dashboard
+    } else {
+      setError("Invalid email or password");
+    }
+  };
+
+  return (
+    <div style={{ padding: 40 }}>
+      <h1>Admin Login</h1>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <br />
+        <br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <br />
+        <br />
+        <button type="submit">Login</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </form>
+    </div>
+  );
+}
