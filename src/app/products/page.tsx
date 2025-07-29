@@ -2,12 +2,14 @@ import { Product } from "@/types/index";
 import Image from "next/image";
 
 async function getProducts(): Promise<Product[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://sarveswary-pharma.vercel.app";
+
+  const res = await fetch(`${baseUrl}/api/products`, {
     cache: "no-store",
   });
-
   const data = await res.json();
-  return data.products || [];
+  return Array.isArray(data.products) ? data.products : [];
 }
 
 export default async function ProductsPage() {
