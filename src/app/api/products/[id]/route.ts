@@ -3,38 +3,56 @@ import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/product";
 
 // PUT /api/products/:id
-export async function PUT(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  await connectDB();
-  const body = await req.json();
-
+export async function PUT(req: NextRequest) {
   try {
-    await Product.findByIdAndUpdate(params.id, body);
+    await connectDB();
+    const body = await req.json();
+
+    // Extract ID from URL
+    const id = req.url.split("/").pop();
+    if (!id) {
+      return NextResponse.json(
+        { success: false, message: "Missing product ID" },
+        { status: 400 }
+      );
+    }
+
+    await Product.findByIdAndUpdate(id, body);
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({
-      success: false,
-      message: "Failed to update product",
-    });
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Failed to update product",
+      },
+      { status: 500 }
+    );
   }
 }
 
-// DELETE /api/products/:id (optional)
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  await connectDB();
-
+// DELETE /api/products/:id
+export async function DELETE(req: NextRequest) {
   try {
-    await Product.findByIdAndDelete(params.id);
+    await connectDB();
+
+    // Extract ID from URL
+    const id = req.url.split("/").pop();
+    if (!id) {
+      return NextResponse.json(
+        { success: false, message: "Missing product ID" },
+        { status: 400 }
+      );
+    }
+
+    await Product.findByIdAndDelete(id);
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({
-      success: false,
-      message: "Failed to delete product",
-    });
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Failed to delete product",
+      },
+      { status: 500 }
+    );
   }
 }
