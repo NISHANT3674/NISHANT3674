@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { FaHome, FaBoxOpen, FaEnvelope } from "react-icons/fa"; // icons
 
 export default function Navbar() {
   return (
@@ -23,24 +24,24 @@ export default function Navbar() {
         </Link>
 
         {/* Links */}
-        <div className="space-x-6 hidden sm:block">
+        <div className="flex gap-8 items-center">
           <Link
             href="/"
-            className="text-gray-700 hover:text-[#1B3F5F] font-medium"
+            className="flex items-center gap-2 text-[#0b3c5a] hover:text-[#6cb5cb]"
           >
-            Home
+            <FaHome /> Home
           </Link>
           <Link
             href="/products"
-            className="text-gray-700 hover:text-[#1B3F5F] font-medium"
+            className="flex items-center gap-2 text-[#0b3c5a] hover:text-[#6cb5cb]"
           >
-            Products
+            <FaBoxOpen /> Products
           </Link>
           <Link
-            href="#contact"
-            className="text-gray-700 hover:text-[#1B3F5F] font-medium"
+            href="/contact"
+            className="flex items-center gap-2 text-[#0b3c5a] hover:text-[#6cb5cb]"
           >
-            Contact
+            <FaEnvelope /> Contact
           </Link>
         </div>
       </div>

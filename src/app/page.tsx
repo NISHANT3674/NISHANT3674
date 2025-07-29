@@ -1,13 +1,23 @@
 // src/app/page.tsx
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
+
+  type Product = {
+    _id: string;
+    name: string;
+    description?: string;
+    composition?: string;
+    dosage?: string;
+    indications?: string[] | string;
+    category?: string;
+    imageUrl?: string;
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -21,7 +31,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-white text-[#1B3F5F]">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* Hero */}
       <section className="bg-[#eaf3f7] py-16 px-4 text-center">
         <div className="bg-[#eaf3f7]">
@@ -71,7 +81,7 @@ export default function HomePage() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {products.map((p: any) => (
+          {products.map((p: Product) => (
             <div
               key={p._id}
               className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm"
@@ -87,18 +97,6 @@ export default function HomePage() {
               <p className="text-sm text-gray-700 mb-1">
                 <strong>Category:</strong> {p.category}
               </p>
-              {/* <p className="text-sm text-gray-600 mb-1">
-                <strong>Composition:</strong> {p.composition}
-              </p>
-              <p className="text-sm text-gray-600 mb-1">
-                <strong>Dosage:</strong> {p.dosage}
-              </p>
-              <p className="text-sm text-gray-600 mb-2">
-                <strong>Indications:</strong> {p.indications}
-              </p>
-              {p.description && (
-                <p className="text-xs text-gray-500 italic">{p.description}</p>
-              )} */}
             </div>
           ))}
         </div>

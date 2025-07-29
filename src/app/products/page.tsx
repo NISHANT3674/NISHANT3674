@@ -15,7 +15,9 @@ export default async function ProductsPage() {
 
   return (
     <main className="max-w-5xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">Our Products</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-[#1B3F5F]">
+        Our Products
+      </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {products.map((product) => (
@@ -28,7 +30,7 @@ export default async function ProductsPage() {
             </h2>
             <p className="text-sm text-gray-600 mb-2">{product.category}</p>
             {product.imageUrl && (
-              <img
+              <Image
                 src={`/products/${product.imageUrl}.png`}
                 alt={product.name}
                 width={300}
@@ -36,7 +38,7 @@ export default async function ProductsPage() {
                 className="w-full h-60 object-contain rounded mb-4"
               />
             )}
-            <p className="text-gray-700 mb-1">
+            {/* <p className="text-gray-700 mb-1">
               <strong>Description:</strong> {product.description}
             </p>
             <p className="text-gray-700 mb-1">
@@ -50,7 +52,7 @@ export default async function ProductsPage() {
               {Array.isArray(product.indications)
                 ? product.indications.join(", ")
                 : product.indications}
-            </p>
+            </p> */}
           </div>
         ))}
       </div>
