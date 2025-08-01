@@ -37,7 +37,7 @@ export default async function ProductsPage() {
                 alt={product.name}
                 width={300}
                 height={200}
-                className="w-full h-60 object-contain rounded mb-4"
+                className="w-full h-60 object-contain drop-shadow-xl/25 rounded mb-4"
               />
             )}
             {/* <p className="text-gray-700 mb-1">

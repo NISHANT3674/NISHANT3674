@@ -1,7 +1,7 @@
-import { NextAuthOptions } from "next-auth";
+import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -10,29 +10,30 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        const adminEmail = process.env.ADMIN_EMAIL;
-        const adminPassword = process.env.ADMIN_PASSWORD;
+        const validEmail = process.env.ADMIN_EMAIL;
+        const validPassword = process.env.ADMIN_PASSWORD;
 
         if (
-          credentials?.email === adminEmail &&
-          credentials?.password === adminPassword
+          credentials?.email === validEmail &&
+          credentials?.password === validPassword
         ) {
           return {
-            id: "admin",
+            id: "admin-id",
             name: "Admin",
-            email: adminEmail,
+            email: validEmail,
           };
         }
 
-        return null; // ❌ Invalid login
+        // ❌ Login failed
+        return null;
       },
     }),
   ],
+  pages: {
+    signIn: "/login",
+  },
   session: {
     strategy: "jwt",
-  },
-  pages: {
-    signIn: "/login", // redirect to this page on failed login
   },
   secret: process.env.NEXTAUTH_SECRET,
 };

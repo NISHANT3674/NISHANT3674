@@ -87,10 +87,12 @@ export default function HomePage() {
               className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm"
             >
               {p.imageUrl && (
-                <img
+                <Image
                   src={`/products/${p.imageUrl}.png`}
                   alt={p.name}
-                  className="w-full h-60 object-contain rounded mb-4"
+                  width={300}
+                  height={200}
+                  className="w-full h-60 object-contain drop-shadow-xl/25 rounded mb-4"
                 />
               )}
               <h3 className="font-semibold text-lg text-[#1B3F5F]">{p.name}</h3>
