@@ -1,46 +1,59 @@
-// src/app/page.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Loader from "@/components/Loader";
+
+type Product = {
+  _id: string;
+  name: string;
+  description?: string;
+  composition?: string;
+  dosage?: string;
+  indications?: string[] | string;
+  category?: string;
+  imageUrl?: string;
+};
 
 export default function HomePage() {
-  const [products, setProducts] = useState([]);
-
-  type Product = {
-    _id: string;
-    name: string;
-    description?: string;
-    composition?: string;
-    dosage?: string;
-    indications?: string[] | string;
-    category?: string;
-    imageUrl?: string;
-  };
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch("/api/products");
-      const data = await res.json();
-      if (data.success) setProducts(data.products.slice(0, 3));
+      try {
+        const [res] = await Promise.all([
+          fetch("/api/products"),
+          new Promise((resolve) => setTimeout(resolve, 1000)), // Always wait 2.5s
+        ]);
+        const data = await res.json();
+        if (data.success) {
+          setProducts(data.products.slice(0, 3));
+        }
+      } catch (err) {
+        console.error("Failed to fetch products", err);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchProducts();
   }, []);
 
+  if (loading) return <Loader />;
+
   return (
     <main className="min-h-screen bg-white text-[#1B3F5F]">
-      {/* <Navbar /> */}
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="bg-[#eaf3f7] py-16 px-4 text-center">
-        <div className="bg-[#eaf3f7]">
+        <div>
           <Image
             src="/logo.png"
             alt="Sarveswary Logo"
             width={200}
             height={80}
-            className="mx-auto mb-4 "
+            className="mx-auto mb-4"
             priority
           />
         </div>
@@ -56,7 +69,8 @@ export default function HomePage() {
           </button>
         </Link>
       </section>
-      {/* About */}
+
+      {/* Why Sarveswary */}
       <section className="py-14 px-4 sm:px-6 bg-white text-center">
         <h2 className="text-xl sm:text-2xl font-bold mb-10">Why Sarveswary?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -74,14 +88,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* 🌟 Featured Products */}
+
+      {/* Featured Products */}
       <section className="py-16 px-4 sm:px-6 bg-[#F9FAFB]">
         <h2 className="text-xl sm:text-2xl font-bold text-center mb-10">
           Featured Products
         </h2>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {products.map((p: Product) => (
+          {products.map((p) => (
             <div
               key={p._id}
               className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm"
@@ -103,6 +117,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
       {/* Contact CTA */}
       <section className="py-16 px-4 sm:px-6 bg-[#E6F2F6] text-center">
         <h2 className="text-xl sm:text-2xl font-bold mb-4">Need help?</h2>
