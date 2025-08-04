@@ -2,14 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/product";
 
+// Helper to extract ID from URL pathname
+const extractIdFromUrl = (req: NextRequest) => {
+  const segments = req.nextUrl.pathname.split("/");
+  return segments[segments.length - 1]; // last segment is the ID
+};
+
 // PUT /api/products/:id
 export async function PUT(req: NextRequest) {
   try {
     await connectDB();
     const body = await req.json();
 
-    // Extract ID from URL
-    const id = req.url.split("/").pop();
+    const id = extractIdFromUrl(req);
     if (!id) {
       return NextResponse.json(
         { success: false, message: "Missing product ID" },
@@ -35,8 +40,7 @@ export async function DELETE(req: NextRequest) {
   try {
     await connectDB();
 
-    // Extract ID from URL
-    const id = req.url.split("/").pop();
+    const id = extractIdFromUrl(req);
     if (!id) {
       return NextResponse.json(
         { success: false, message: "Missing product ID" },
@@ -57,19 +61,23 @@ export async function DELETE(req: NextRequest) {
   }
 }
 
-// ✅ Correct GET handler
-export async function GET(
-  req: NextRequest,
-  context: { params: { id: string } }
-) {
-  await connectDB();
-  const { id } = context.params;
-
+// GET /api/products/:id
+export async function GET(req: NextRequest) {
   try {
+    await connectDB();
+
+    const id = extractIdFromUrl(req);
+    if (!id) {
+      return NextResponse.json(
+        { success: false, message: "Missing product ID" },
+        { status: 400 }
+      );
+    }
+
     const product = await Product.findById(id);
     if (!product) {
       return NextResponse.json(
-        { success: false, message: "Not found" },
+        { success: false, message: "Product not found" },
         { status: 404 }
       );
     }
