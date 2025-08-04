@@ -1,22 +1,22 @@
-import mongoose, { Schema, models } from "mongoose";
+import mongoose from "mongoose";
 
-const productSchema = new Schema(
+const productSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      required: true,
-    },
+    name: { type: String, required: true },
     description: String,
     composition: String,
     dosage: String,
-    indications: [String], // array of strings
+    indications: [String], // keep it as an array in DB
     category: String,
     imageUrl: String,
+    quantity: String, // ✅ NEW FIELD
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-// Avoid recompiling model during hot reloads
-const Product = models.Product || mongoose.model("Product", productSchema);
+const Product =
+  mongoose.models.Product || mongoose.model("Product", productSchema);
 
 export default Product;

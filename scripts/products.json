@@ -2,161 +2,201 @@
   {
     "name": "Tazoxim",
     "description": "Ceftizoxime & Tazobactam Injection",
-    "composition": "Each vial contains: Ceftizoxime 3 gm & Tazobactam 375 mg. [cite: 55]",
-    "dosage": "Large Animal: 1 Vial and repeat after 96 hours in case of severe clinical mastitis by Intravenous route only. [cite: 57]",
-    "indications": "For treatment of clinical and subclinical Mastitis, Metritis, Respiratory Tract Infection and Other bacterial infections susceptible to ceftizoxime and tazobactam combination. [cite: 59]",
-    "category": "Injection"
+    "composition": "Each vial contains: Ceftizoxime 3 gm & Tazobactam 375 mg.",
+    "dosage": "Large Animal: 1 Vial and repeat after 96 hours in case of severe clinical mastitis by Intravenous route only.",
+    "indications": "For treatment of clinical and subclinical Mastitis, Metritis, Respiratory Tract Infection and Other bacterial infections susceptible to ceftizoxime and tazobactam combination.",
+    "category": "Injection",
+    "quantity": "3.375 gm vial",
+    "imageUrl": "tazoxim"
   },
   {
     "name": "Plexfine",
-    "description": "Vitamin B-Complex Injection",
-    "composition": "Each ml. contains: Vitamin B1 (Thiamine HCL.) I.P. 33.3 mg. [cite: 68, 72, 73, 74] Vitamin B2 (Riboflavin Phosphate) I.P. 1.66 mg. [cite: 74, 75] Vitamin B6 (Pyridoxine HCI.) I.P. 3.33 mg. [cite: 74, 76] Vitamin B12 (Cyanocobalamine) I.P. 33.3 mg. [cite: 74, 77] Vitamin B3 (Niacinamide) I.P. 33.3 mg. [cite: 74, 78] Vitamin B5 (D-Panthenol) I.P. 1.66 mg. [cite: 74, 79] Benzyl Alcohol (As Preservative) I.P. 1.5% w/v [cite: 74, 80]",
-    "dosage": "Cow, Buffalo and Horse: 10ml/animal. [cite: 81] Calf, Sheep and Goat: 2-3ml/animal. [cite: 81] Dog and Cat : 1ml/20kg body weight. [cite: 81] by IM/IV route only. [cite: 82]",
-    "indications": "Indigestion [cite: 84], Weakness [cite: 85], Heat stress [cite: 86], Anaemia [cite: 87], Nervous disorders [cite: 88], Help in effectiveness of antibiotic. [cite: 89]",
-    "category": "Injection"
+    "description": "B-Complex Injection",
+    "composition": "Per ml contains: Vitamin B1 (Thiamine HCL.) 33.3 mg., Vitamin B2 (Riboflavin Phosphate) 1.66 mg., Vitamin B6 (Pyridoxine HCI.) 3.33 mg., Vitamin B12 (Cyanocobalamine) 33.3 mg., Vitamin B3 (Niacinamide) 33.3 mg., Vitamin B5 (D-Panthenol) 1.66 mg., Benzyl Alcohol (As Preservative) 1.5% w/v",
+    "dosage": "Cow, Buffalo, Horse: 10ml/animal. Calf, Sheep, Goat: 2-3ml/animal. Dog, Cat: 1ml/20kg body weight",
+    "indications": "Indigestion, Weakness, Heat stress, Anaemia, Nervous disorders, Help in effectiveness of antibiotic",
+    "category": "Injection",
+    "quantity": "100 ml",
+    "imageUrl": "plexfine"
   },
   {
     "name": "Meglufine",
     "description": "Flunixin Meglumine Injection",
-    "composition": "Each ml. contains: Flunixin Meglumine I.P. (Vet) 83 mg. [cite: 108] Equivalent to Flunixin 50 mg. [cite: 108] Phenol I.P. (As Preservative) 0.5% w/v. [cite: 108] Water for Injection I.P. q.s. [cite: 108]",
-    "dosage": "Cattle, buffalo and horse: 2ml/45 kg. [cite: 110] by IV/IM route only. [cite: 111]",
-    "indications": "Mastitis & Metritis [cite: 113], Uterine prolapse [cite: 114], Post-operative edema [cite: 115], Broncho-pneumonia [cite: 116], Ligament injury [cite: 117], Colic pain. [cite: 118]",
-    "category": "Injection"
+    "composition": "Per ml contains: Flunixin Meglumine I.P. (Vet) 83 mg., Equivalent to Flunixin 50 mg., Phenol I.P. (As Preservative) 0.5% w/v, Water for Injection I.P. q.s.",
+    "dosage": "Cattle, buffalo and horse: 2 ml/45 kg by IV/IM route only.",
+    "indications": "Mastitis & Metritis, Uterine prolapse, Post-operative edema, Broncho-pneumonia, Ligament injury, Colic pain",
+    "category": "Injection",
+    "quantity": "100 ml",
+    "imageUrl": "meglufine"
   },
   {
     "name": "Plexfine-L",
-    "description": "Vitamin B-Complex with Liver Extract Injection",
-    "composition": "Each ml. contains: Thiamine Hydrochloride I.P. 10 mg. [cite: 131, 132, 133, 134] Riboflavin Sodium Phosphate I.P. 3 mg. [cite: 135, 136, 137] Niacinamide I.P. 50 mg. [cite: 138, 139, 140] Vitamin B12 I.P. 20 mcg. [cite: 141, 142, 143] Liver Injection crude having vitamin B12 activity eq. to not less than 2 mcg. of cyanocobalamine. [cite: 144, 145] Phenol I.P. 0.5% w/v. [cite: 146, 147, 148] Water for Injections I.P. q.s. [cite: 149, 150, 151] Appropriate overages of vitamin added. [cite: 152]",
-    "dosage": "Cattle, Buffalo: 5-10ml/animal. [cite: 154] by IM route only. [cite: 155]",
-    "indications": "Non-specific anorexia [cite: 157], Liver disorders [cite: 158], Debility [cite: 159], General weakness [cite: 160], Eczemas [cite: 161], Parasitic anaemia. [cite: 162]",
-    "category": "Injection"
+    "description": "B-Complex with Liver Extract",
+    "composition": "Per ml contains: Thiamine Hydrochloride I.P. 10 mg., Riboflavin Sodium Phosphate I.P. 3 mg., Niacinamide I.P. 50 mg., Vitamin B12 I.P. 20 mcg., Liver Injection crude having vitamin B12 activity eq. to not less than 2 mcg. of cyanocobalamine, Phenol I.P. 0.5% w/v, Water for Injections I.P. q.s., Appropriate overages of vitamin added",
+    "dosage": "Cattle, Buffalo: 5-10 ml/animal. by IM route only.",
+    "indications": "Non-specific anorexia, Liver disorders, Debility, General weakness, Eczemas, Parasitic anaemia",
+    "category": "Injection",
+    "quantity": "100 ml",
+    "imageUrl": "plexfine-l"
   },
   {
     "name": "Levobol",
     "description": "Levofloxacin Bolus",
-    "composition": "Each Uncoated Bolus contains: Levofloxacin Hemihydrate equ. to Levofloxacin I.P. 2 gm. [cite: 177, 178, 191, 194] Excipients q.s. [cite: 179, 194]",
-    "dosage": "Large Animals : 1 Bolus O.D. [cite: 181] Small Animals: ½ Bolus O.D. [cite: 182] Oral route only. [cite: 183]",
-    "indications": "Respiratory Tract Infections [cite: 185], Gastro Intestinal Infections [cite: 185], Urogenital Tract Infection [cite: 186], Enteritis & Calf Scours [cite: 186], Metritis, Pyometra [cite: 187], Cystitis [cite: 188], Urethritis [cite: 189], Skin & Soft Tissue Infections [cite: 190], Coli-Septicemia [cite: 192], Coli-Diarrhoea [cite: 192], H.S. [cite: 193], Mycoplasma Infection (Mastitis) [cite: 195], Sinusitis & Chronic Bronchitis [cite: 195], Pneumonia [cite: 196], Broncho-Pneumonia [cite: 197], Infectious Diarrhoea. [cite: 198]",
-    "category": "Bolus"
+    "composition": "Per bolus contains: Levofloxacin Hemihydrate I.P. equ. to Levofloxacin 2 gm., Excipients q.s.",
+    "dosage": "Large animals: 1 Bolus O.D. Small animals: 1/2 Bolus O.D.",
+    "indications": "Respiratory Tract Infections, Gastro Intestinal Infections, Urogenital Tract Infection, Enteritis & Calf Scours, Metritis, Pyometra, Cystitis, Urethritis, Skin & Soft Tissue Infections, Coli-Septicemia, Coli-Diarrhoea, H.S., Mycoplasma Infection (Mastitis), Sinusitis & Chronic Bronchitis, Pneumonia, Broncho-Pneumonia, Infectious Diarrhoea",
+    "category": "Bolus",
+    "quantity": "2 Bolus",
+    "imageUrl": "levobol"
   },
   {
     "name": "Levofine",
     "description": "Levofloxacin Injection",
-    "composition": "Each ml. contains: Fevofloxacin Hemihydrate I.P. eq. to Levofloxacin 100 mg. [cite: 212] Benzyl Alcohol (As preservative) I.P. 1.5% v/v. [cite: 212] Water for Injection I.P. q.s. [cite: 212]",
-    "dosage": "Cattle and buffalo: 2-2.5 mg/kg body weight I.M. [cite: 214] Poultry: 5-10 mg/kg body weight I.M. [cite: 215] by IV/IM route only. [cite: 216]",
-    "indications": "Mastitis, Metritis, H.S. [cite: 218], Pneumonia [cite: 219], Urinary Tract Infections [cite: 220], CRD [cite: 221], Bronchitis [cite: 222], Colibacilosis / E.Coli Infections [cite: 223], Diarrhoea & Dysentry [cite: 224], Gastro-Enteritis. [cite: 225]",
-    "category": "Injection"
+    "composition": "Per ml contains: Fevofloxacin Hemihydrate I.P. eq. to Levofloxacin 100 mg., Benzyl Alcohol (As preservative) I.P. 1.5% v/v, Water for Injection I.P. q.s.",
+    "dosage": "Cattle, buffalo: 2-2.5 mg/kg body weight I.M. Poultry: 5-10 mg/kg body weight I.M.",
+    "indications": "Mastitis, Metritis, H.S., Pneumonia, Urinary Tract Infections, CRD, Bronchitis, Colibacilosis / E.Coli Infections, Diarrhoea & Dysentry, Gastro-Enteritis",
+    "category": "Injection",
+    "quantity": "100 ml",
+    "imageUrl": "levofine"
   },
   {
     "name": "Protoban",
     "description": "Buparvaquone Injection",
-    "composition": "Each ml. contains: Buparvaquone 50 mg. [cite: 239] Sorbitan Mono-oleate B.P. 150 mg. [cite: 239] Oily base q.s. [cite: 239]",
-    "dosage": "1ml/20 kg body weight by I.M. route into neck muscle. [cite: 241] Not more than 10ml at a single site. [cite: 242] In severe cases repeat within 48-72hrs. [cite: 243]",
-    "indications": "Buparvaquone is used to Treat Theileriosis. [cite: 245]",
-    "category": "Injection"
+    "composition": "Per ml contains: Buparvaquone 50 mg., Sorbitan Mono-oleate B.P. 150 mg., Oily base q.s.",
+    "dosage": "1 ml/20 kg body weight by I.M. route into neck muscle. Not more than 10ml at a single site. In severe cases repeat within 48-72hrs.",
+    "indications": "Buparvaquone is used to Treat Theileriosis",
+    "category": "Injection",
+    "quantity": "30 ml",
+    "imageUrl": "protoban"
   },
   {
     "name": "Meglubol",
     "description": "Flunixin Meglumine Bolus",
-    "composition": "Each Uncoated Bolus contains: Flunixin Meglumine I.P. (Vet) 1000 mg. [cite: 257] Equ. to Flunixin 602 mg. [cite: 257]",
-    "dosage": "Large Animals: 1-2 Bolus B.D. for 4-5 days [cite: 260] Small Animals: ½-1 Bolus B.D. for 4-5 days [cite: 261] or as Directed by the Veterinarian. [cite: 262] Oral route only. [cite: 263]",
-    "indications": "Pain [cite: 265], Fever [cite: 266], Inflammation [cite: 267], Spasmodic pain. [cite: 268]",
-    "category": "Bolus"
+    "composition": "Per bolus contains: Flunixin Meglumine I.P. (Vet) 1000 mg., Equ. to Flunixin 602 mg.",
+    "dosage": "Large animals: 1-2 Bolus B.D. for 4-5 days. Small animals: 1/2-1 Bolus B.D. for 4-5 days",
+    "indications": "Pain, Fever, Inflammation, Spasmodic pain",
+    "category": "Bolus",
+    "quantity": "2 Bolus",
+    "imageUrl": "meglubol"
   },
   {
     "name": "Meglubol-S",
-    "description": "Flunixin Meglumine & Serratiopeptidase Bolus",
-    "composition": "Each Uncoated Bolus contains: Flunixin Meglumine I.P. (Vet) 1000 mg. [cite: 270] Equ. to Flunixin 602 mg. [cite: 270] Serratiopeptidase I.P. 100 mg. (As enteric coated granules equ. to Enzyme Activity 200000 serratiopeptidase units) [cite: 271] Excipients q.s. [cite: 271]",
-    "dosage": "Large Animals : 1-2 Bolus B.D. for 4-5 days. [cite: 272] Small Animals : ½-1 Bolus B.D. for 4-5 days. [cite: 272, 273] or as directed by the Veterinarian. [cite: 273] Oral route only. [cite: 273]",
-    "indications": "Mastitis with fibrotech condition [cite: 274], Metritis [cite: 274], Post-operative edema [cite: 274], Hematoma & Wounds [cite: 274], Broncho-pneumonia [cite: 274], Ligament injury [cite: 274], Prolaps. [cite: 274]",
-    "category": "Bolus"
+    "description": "Flunixin Meglumine with Serratiopeptidase Bolus",
+    "composition": "Per bolus contains: Flunixin Meglumine I.P. (Vet) 1000 mg., Equ. to Flunixin 602 mg., Serratiopeptidase I.P. (As enteric coated granules equ. to Enzyme Activity 200000 serratiopeptidase units) 100 mg., Excipients q.s.",
+    "dosage": "Large animals: 1-2 Bolus B.D. for 4-5 days. Small animals: 1/2-1 Bolus B.D. for 4-5 days",
+    "indications": "Mastitis with fibrotech condition, Metritis, Post-operative edema, Hematoma & Wounds, Broncho-pneumonia, Ligament injury, Prolaps",
+    "category": "Bolus",
+    "quantity": "2 Bolus",
+    "imageUrl": "meglubol-s"
   },
   {
     "name": "LevoMag",
-    "description": "Levofloxacin, Flunixin Meglumine & Serratiopeptidase Bolus",
-    "composition": "Each Uncoated Bolus contains: Levofloxacin Hemihydrate I.P. Eq. to Levofloxacin (Anhydrous) 2000 mg. [cite: 276] Flunixin Meglumine I.P. (vet) 1000 mg. [cite: 276, 277] Serratiopeptidase I.P. 120 mg. (As enteric coated granules eq. to Enzyme activity 240000 serratiopeptidase units) [cite: 277] Excipients q.s. [cite: 277]",
-    "dosage": "Large Animals : 1 Bolus O.D. [cite: 278] Small Animals : ½ Bolus O.D. [cite: 278] Oral route only. [cite: 278]",
-    "indications": "Mastitis [cite: 279], Metritis [cite: 279], Pyometra [cite: 279], Pneumonia [cite: 279], Respiratory Tract Infections [cite: 279], Urogenital Tract Infections. [cite: 279]",
-    "category": "Bolus"
+    "description": "Levofloxacin with Flunixin & Serratiopeptidase Bolus",
+    "composition": "Per bolus contains: Levofloxacin Hemihydrate I.P. Eq. to Levofloxacin (Anhydrous) 2000 mg., Flunixin Meglumine I.P. (vet) 1000 mg., Serratiopeptidase I.P. (As enteric coated granules eq. to Enzyme activity 240000 serratiopeptidase units) 120 mg., Excipients q.s.",
+    "dosage": "Large animals: 1 Bolus O.D. Small animals: 1/2 Bolus O.D.",
+    "indications": "Mastitis, Metritis, Pyometra, Pneumonia, Respiratory Tract Infections, Urogenital Tract Infections",
+    "category": "Bolus",
+    "quantity": "10 Bolus",
+    "imageUrl": "levomag"
   },
   {
     "name": "Levocet",
-    "description": "Levocetirizine Bolus",
-    "composition": "Each Uncoated Bolus contains: Levocetirizine Hydrochloride I.P. 50 mg. [cite: 281] Excipients q.s. [cite: 281]",
-    "dosage": "Large Animals : 1-2 Bolus O.D. [cite: 282] Small Animals : ½-1 Bolus O.D. [cite: 282] Oral route only. [cite: 282]",
-    "indications": "Cough, Cold, Pneumonia & Bronchitis [cite: 283], Allergic Conjuctivitis [cite: 283], Allergic Conditions [cite: 283], Eczema. [cite: 283]",
-    "category": "Bolus"
+    "description": "Levocetirizine Hydrochloride Bolus",
+    "composition": "Per bolus contains: Levocetirizine Hydrochloride I.P. 50 mg., Excipients q.s.",
+    "dosage": "Large animals: 1-2 Bolus O.D. Small animals: 1/2-1 Bolus O.D.",
+    "indications": "Cough, Cold, Pneumonia & Bronchitis, Allergic Conjuctivitis, Allergic Conditions, Eczema",
+    "category": "Bolus",
+    "quantity": "10 Bolus",
+    "imageUrl": "levocet"
   },
   {
     "name": "T5",
     "description": "Trisodium Citrate Powder",
-    "composition": "Trisodium Citrate Powder EXTRA PURE NaCHO.2HO=294.1036572 [cite: 285]",
-    "dosage": "30gm twice a day. [cite: 285] for 5 day along with treatment. [cite: 286]",
-    "indications": "Support in clinical & sub clinical Mastitis [cite: 286], Salty Milk [cite: 286], Sour Milk [cite: 286], Bad Smelly Milk [cite: 286], Flax Milk. [cite: 286]",
-    "category": "Powder"
+    "composition": "Trisodium Citrate Powder, NaCHO.2HO=294.1036572",
+    "dosage": "30gm twice a day for 5 day along with treatment.",
+    "indications": "Support in clinical & sub clinical Mastitis, Salty Milk, Sour Milk, Bad Smelly Milk, Flax Milk",
+    "category": "Powder",
+    "quantity": "300 gm (5 x 60 gm)",
+    "imageUrl": "t5"
   },
   {
     "name": "Interkill-Advance",
-    "description": "Ricobendazole & Ivermectin Bolus",
-    "composition": "Each Uncoated Bolus contains: Ricobandazole 3000 mg. [cite: 288] Ivermectin I.P.(Vet) 100 mg. [cite: 288] Excipients q.s. [cite: 288]",
-    "dosage": "Cattle and buffalo : 1 Bolus [cite: 289] Repeat once in 3 Months. or as directed by the Veterinarian. [cite: 289] Oral route only. [cite: 290]",
-    "indications": "Gastro-intestinal roundworms [cite: 290], Tapeworms [cite: 290], Lungworms [cite: 290], Adult liver fluke [cite: 290], Ovicidal to round worm eggs. [cite: 290]",
-    "category": "Bolus"
+    "description": "Ricobandazole & Ivermectin Bolus",
+    "composition": "Per bolus contains: Ricobandazole 3000 mg., Ivermectin I.P.(Vet) 100 mg., Excipients q.s.",
+    "dosage": "Cattle and buffalo : 1 Bolus. Repeat once in 3 Months. or as directed by the Veterinarian.",
+    "indications": "Gastro-intestinal roundworms, Tapeworms, Lungworms, Adult liver fluke, Ovicidal to round worm eggs",
+    "category": "Bolus",
+    "quantity": "10 Bolus",
+    "imageUrl": "interkill"
   },
   {
-    "name": "CDS",
-    "description": "Glycine Chelated Mineral Mixture",
-    "composition": "Each kg. nutritional value of : Shatawari Ext. 1500 mg. [cite: 295, 297] Jivanti Ext. 1500 mg. [cite: 295, 297] Kamboji Ext. 1500 mg. [cite: 295, 298] Aloevera Ext. 1500 mg. [cite: 295, 298] Vitamin A 12,00,000 I.U. [cite: 296, 298] Vitamin D3 95,000 I.U. [cite: 296, 298] Vitamin E 450 mg. [cite: 296, 298] Mecobalamin 7200 mcg. [cite: 296, 298] Vitamin K 225 mg. [cite: 296, 298] Vitamin C 500 mg. [cite: 296, 298] Nicotinamide 1200 mg. [cite: 296, 298] Calcium 35 %. [cite: 296, 299] Phosphorus 17.5 %. [cite: 296, 299] Cobalt 170 mg. [cite: 296, 299] Copper 1250 mg. [cite: 296, 299] Iodine 350 mg. [cite: 296, 299] Iron 1600 mg. [cite: 300, 301] Magnesium 6500 mg. [cite: 301] Manganese 1600 mg. [cite: 301] Potassium 120 mg. [cite: 301] Selenium 12 mg. [cite: 301] Sodium 6 mg. [cite: 301] Sulphur 0.75 %. [cite: 301] Zinc 9800 mg. [cite: 301] Trisodium Citrate 60 mg. [cite: 301] By Pas Fat 120 gm. [cite: 301] Energy 2500 K Cal. [cite: 302] Carbohydrate 1500 mg. [cite: 302] Bio Active Chromium 40 mg. [cite: 302] Live Yeast Culture 25 x 10^9 CFU. [cite: 302] Live Lactobacillus Sporogenes Culture 200 million CFU. [cite: 302]",
-    "dosage": "Cow, buffalo & horse : 50 gm per day. [cite: 296] Calf, sheep & goat : 25-30 gm per day. [cite: 297] Camel : 100 gm per day. [cite: 297]",
-    "indications": "Nutritional supplement",
-    "category": "Mineral Mixture"
-  },
-  {
-    "name": "FeedFire",
-    "description": "Animal feed supplement with Enzymes, Probiotics Minerals & Cyproheptadine Bolus",
-    "composition": "Each uncoated bolus contains : Derived Yeast 2.15 gm. [cite: 311] Live Lactobacillus 25 million CFU. [cite: 311] Live Extract 20 mg. [cite: 311] Sea Flora Extract 1 gm. [cite: 312] Sodium Bicarbonate 675 mg. [cite: 312] Copper 5 mg. [cite: 312] Iron 5 mg. [cite: 312] L-Lysine 50 mg. [cite: 312] Methionine. [cite: 312]",
-    "dosage": "Not explicitly mentioned in the provided text.",
-    "indications": "Not explicitly mentioned in the provided text.",
-    "category": "Animal Feed Supplement / Bolus"
+    "name": "CIDS",
+    "description": "Nutritional Supplement",
+    "composition": "Per kg nutritional value: Shatawari Ext. 1500 mg., Jivanti Ext. 1500 mg., Kamboji Ext. 1500 mg., Aloevera Ext. 1500 mg., Vitamin A 12,00,000 I.U., Vitamin D3 95,000 I.U., Vitamin E 450 mg., Mecobalamin 7200 mcg., Vitamin K 225 mg., Vitamin C 500 mg., Nicotinamide 1200 mg., Calcium 35 %, Phosphorus 17.5 %, Cobalt 170 mg., Copper 1250 mg., Iodine 350 mg., Iron 1600 mg., Magnesium 6500 mg., Manganese 1600 mg., Potassium 120 mg., Selenium 12 mg., Sodium 6 mg., Sulphur 0.75 %, Zinc 9800 mg., Trisodium Citrate 60 mg., By Pas Fat 120 gm., Energy 2500 K Cal, Carbohydrate 1500 mg., Bio Active Chromium 40 mg., Live Yeast Culture 25 x 10^9 CFU, Live Lactobacillus Sporogenes Culture 200 million CFU",
+    "dosage": "Cow, Buffalo, Horse: 50 gm per day. Calf, Sheep, Goat: 25-30 gm per day. Camel: 100 gm per day",
+    "indications": null,
+    "category": "Powder",
+    "quantity": "1 kg, 5 kg, 20 kg",
+    "imageUrl": "cds"
   },
   {
     "name": "Gluca-up",
     "description": "Gluconeogenic Precursors",
-    "composition": "Gluconeogenic Precursors fortified with B-Complex Vitamins, Galactogogues, Electrolytes, Amino acid and with Purified Honey. [cite: 304]",
-    "dosage": "Cattle Buffalo : 1st day 200ml twice a day. [cite: 305] 2nd day 100ml twice a day. [cite: 306] Oral route only. [cite: 306]",
-    "indications": "Helps to prevent and treat Ketosis in ruminants. [cite: 307] Aids to alleviate Negative Energy Balance through Gluconeogenesis. [cite: 307] Supports in maintaining energy levels in high yielders. [cite: 308] Improves performance and increases milk production. [cite: 308] Acts as an instant energy source during stress conditions. [cite: 309] Enhances growth & increases Feed Conversation Efficiency. [cite: 309]",
-    "category": "Liquid Supplement"
+    "composition": "Gluconeogenic Precursors fortified with B-Complex Vitamins, Galactogogues, Electrolytes, Amino acid and with Purified Honey.",
+    "dosage": "Cattle Buffalo: 1st day 200ml twice a day. 2nd day 100ml twice a day.",
+    "indications": "Helps to prevent and treat Ketosis in ruminants., Aids to alleviate Negative Energy Balance through Gluconeogenesis., Supports in maintaining energy levels in high yielders., Improves performance and increases milk production., Acts as an instant energy source during stress conditions., Enhances growth & increases Feed Conversation Efficiency.",
+    "category": "Liquid",
+    "quantity": "2 Litre",
+    "imageUrl": "gluca-up"
+  },
+  {
+    "name": "FeedFire",
+    "description": "Probiotic & Nutritional Supplement Bolus",
+    "composition": "Per bolus contains: Derived Yeast 2.15 gm., Live Lactobacillus 25 million CFU, Live Extract 20 mg., Sea Flora Extract 1 gm., Sodium Bicarbonate 675 mg., Copper 5 mg., Iron 5 mg., L-Lysine 50 mg., Methionine",
+    "dosage": "null2 Bolus twice a day by Oral route only.",
+    "indications": "Indigestion, Anorexia, Off Feed, Acidosis, Ketosis",
+    "category": "Bolus",
+    "quantity": "4 Bolus",
+    "imageUrl": "feedfire"
   },
   {
     "name": "Amokill-SB",
     "description": "Ampicillin & Sulbactam Injection",
-    "composition": "Each vial contains: Sterile Ampicillin Sodium I.P. eq. to Anhydrous Ampicillin 3000 mg. [cite: 313] Sterile Sulbactam Sodium U.S.P. eq. to Anhydrous Sulbactom 1500 mg. [cite: 314] Each FFS Ampoule contaning Sterile water for Injection I.P. 20 ml. [cite: 315]",
-    "dosage": "Large Animal : 1 Vial 3 to 5 days. [cite: 316] by IM/IV route only. [cite: 316]",
-    "indications": "For treatment of clinical and subclinical Mastitis, Metritis, Respiratory Tract Infection and Other bacterial infections. [cite: 317]",
-    "category": "Injection"
+    "composition": "Per vial contains: Sterile Ampicillin Sodium I.P. eq. to Anhydrous Ampicillin 3000 mg., Sterile Sulbactam Sodium U.S.P. eq. to Anhydrous Sulbactom 1500 mg. Per ampoule contains: Sterile water for Injection I.P. 20 ml.",
+    "dosage": "Large Animal : 1 Vial 3 to 5 days by IM/IV route only.",
+    "indications": "For treatment of clinical and subclinical Mastitis, Metritis, Respiratory Tract Infection and Other bacterial infections.",
+    "category": "Injection",
+    "quantity": "4.5 gm vial",
+    "imageUrl": "amokill-sb"
   },
   {
     "name": "Amokill-Tazo",
     "description": "Amoxycillin & Tazobactam Injection",
-    "composition": "Each vial contains: Sterile Amoxycillin Sodium I.P. eq. to Anhydrous Amoxycillin 4000 mg. [cite: 319] Sterile Tazobactam Sodium U.S.P. eq. to Anhydrous Tazobactom 500 mg. [cite: 320] Each FFS Ampoule contaning Sterile water for Injection I.P. 20 ml. [cite: 321]",
-    "dosage": "Large Animal : 1 Vial 3 to 5 days. [cite: 322] by IM/IV route only. [cite: 322]",
-    "indications": "For treatment of clinical and subclinical Mastitis, Metritis, Respiratory Tract Infection and Other bacterial infections. [cite: 323]",
-    "category": "Injection"
+    "composition": "Per vial contains: Sterile Amoxycillin Sodium I.P. eq. to Anhydrous Amoxycillin 4000 mg., Sterile Tazobactam Sodium U.S.P. eq. to Anhydrous Tazobactom 500 mg. Per ampoule contains: Sterile water for Injection I.P. 20 ml.",
+    "dosage": "Large Animal : 1 Vial 3 to 5 days by IM/IV route only.",
+    "indications": "For treatment of clinical and subclinical Mastitis, Metritis, Respiratory Tract Infection and Other bacterial infections.",
+    "category": "Injection",
+    "quantity": "4.5 gm vial",
+    "imageUrl": "amokill-tazo"
   },
   {
     "name": "PhosButa",
-    "description": "Butaphosphan & Mecobalamin Injection",
-    "composition": "Each ml. contains: Butaphosphan 100 mg. [cite: 325] Mecobalamin 100 mcg. [cite: 325] Water for Injections I.P. q.s. [cite: 325] Adequate overages of Mecobalamin added. [cite: 326]",
-    "dosage": "Cattle, Buffalo : 10-25 ml/animal. [cite: 326] by IM/IV/SC route only. [cite: 326]",
-    "indications": "Metabolic disorders [cite: 327], Ketosis [cite: 327], Hypocalcemia disorders [cite: 327], Indigestion [cite: 327], Weakness and anemia [cite: 327], Muscular activity [cite: 327], Stress reduction. [cite: 327]",
-    "category": "Injection"
+    "description": "Butaphosphan with Mecobalamin Injection",
+    "composition": "Per ml contains: Butaphosphan 100 mg., Mecobalamin 100 mcg., Water for Injections I.P. q.s., Adequate overages of Mecobalamin added",
+    "dosage": "Cattle, Buffalo : 10-25 ml/animal. by IM/IV/SC route only.",
+    "indications": "Metabolic disorders, Ketosis, Hypocalcemia disorders, Indigestion, Weakness and anemia, Muscular activity, Stress reduction",
+    "category": "Injection",
+    "quantity": "100 ml",
+    "imageUrl": "phosbuta"
   },
   {
     "name": "XY-Tazo",
     "description": "Ceftiofur & Tazobactam Injection",
-    "composition": "Each vial contains: Ceftiofur Sodium (Sterile) I.P. eq. to anhydrous Ceftiofur 1000 mg. [cite: 329] Tazobactam Sodium (Sterile) I.P. eq. to anhydrous Tazobactam 125 mg. [cite: 330]",
-    "dosage": "Large Animal : 1 vial 3 to 5 days. [cite: 331] by IM/IV route only. [cite: 331]",
-    "indications": "Pyometra [cite: 332], Metritis [cite: 332], Uterus Infection. [cite: 332]",
-    "category": "Injection"
+    "composition": "Per vial contains: Ceftiofur Sodium (Sterile) I.P. eq. to anhydrous Ceftiofur 1000 mg., Tazobactam Sodium (Sterile) I.P. eq. to anhydrous Tazobactam 125 mg.",
+    "dosage": "Large Animal : 1 vial 3 to 5 days by IM/IV route only.",
+    "indications": "Pyometra, Metritis, Uterus Infection",
+    "category": "Injection",
+    "quantity": "1.125 gm vial",
+    "imageUrl": "xy-tazo"
   }
 ]
