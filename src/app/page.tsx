@@ -90,30 +90,32 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products */}
+
       <section className="py-16 px-4 sm:px-6 bg-[#F9FAFB]">
         <h2 className="text-xl sm:text-2xl font-bold text-center mb-10">
           Featured Products
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {products.map((p) => (
-            <div
-              key={p._id}
-              className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm"
-            >
-              {p.imageUrl && (
-                <Image
-                  src={`/products/${p.imageUrl}.png`}
-                  alt={p.name}
-                  width={300}
-                  height={200}
-                  className="w-full h-60 object-contain drop-shadow-xl/25 rounded mb-4"
-                />
-              )}
-              <h3 className="font-semibold text-lg text-[#1B3F5F]">{p.name}</h3>
-              <p className="text-sm text-gray-700 mb-1">
-                <strong>Category:</strong> {p.category}
-              </p>
-            </div>
+            <Link key={p._id} href={`/products/${p._id}`}>
+              <div className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm">
+                {p.imageUrl && (
+                  <Image
+                    src={`/products/${p.imageUrl}.png`}
+                    alt={p.name}
+                    width={300}
+                    height={200}
+                    className="w-full h-60 object-contain drop-shadow-xl/25 rounded mb-4"
+                  />
+                )}
+                <h3 className="font-semibold text-lg text-[#1B3F5F]">
+                  {p.name}
+                </h3>
+                <p className="text-sm text-gray-700 mb-1">
+                  <strong>Category:</strong> {p.category}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </section>

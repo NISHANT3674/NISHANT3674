@@ -56,3 +56,12 @@ export async function DELETE(req: NextRequest) {
     );
   }
 }
+
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  await connectDB();
+  const product = await Product.findById(params.id);
+  return NextResponse.json({ success: true, product });
+}

@@ -14,6 +14,7 @@ type Product = {
   indications?: string[] | string;
   category?: string;
   imageUrl?: string;
+  quantity?: string;
 };
 
 export default function AdminPage() {
@@ -22,6 +23,7 @@ export default function AdminPage() {
   const [formData, setFormData] = useState({
     _id: "",
     name: "",
+    quantity: "",
     description: "",
     composition: "",
     dosage: "",
@@ -70,6 +72,7 @@ export default function AdminPage() {
       setFormData({
         _id: "",
         name: "",
+        quantity: "",
         description: "",
         composition: "",
         dosage: "",
@@ -124,6 +127,15 @@ export default function AdminPage() {
           value={formData.description}
           onChange={(e) =>
             setFormData({ ...formData, description: e.target.value })
+          }
+          className="w-full p-2 border border-gray-600 text-[#1B3F5F] rounded"
+        />
+        <input
+          type="text"
+          placeholder="Quantity"
+          value={formData.quantity}
+          onChange={(e) =>
+            setFormData({ ...formData, quantity: e.target.value })
           }
           className="w-full p-2 border border-gray-600 text-[#1B3F5F] rounded"
         />
@@ -230,6 +242,7 @@ export default function AdminPage() {
                     : p.indications || "",
                   category: p.category || "",
                   imageUrl: p.imageUrl || "",
+                  quantity: p.quantity || "",
                 });
                 formRef.current?.scrollIntoView({ behavior: "smooth" });
               }}

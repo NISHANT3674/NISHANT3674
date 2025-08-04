@@ -1,6 +1,7 @@
 export interface Product {
   _id: string;
   name: string;
+  quantity?: string;
   description?: string;
   composition?: string;
   dosage?: string;
