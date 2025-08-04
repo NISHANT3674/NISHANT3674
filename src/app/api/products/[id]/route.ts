@@ -57,11 +57,28 @@ export async function DELETE(req: NextRequest) {
   }
 }
 
+// ✅ Correct GET handler
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   await connectDB();
-  const product = await Product.findById(params.id);
-  return NextResponse.json({ success: true, product });
+  const { id } = context.params;
+
+  try {
+    const product = await Product.findById(id);
+    if (!product) {
+      return NextResponse.json(
+        { success: false, message: "Not found" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ success: true, product });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, message: "Error fetching product" },
+      { status: 500 }
+    );
+  }
 }
