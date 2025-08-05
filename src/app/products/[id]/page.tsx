@@ -5,11 +5,14 @@ import Image from "next/image";
 import Product from "@/models/product";
 import { connectDB } from "@/lib/mongodb";
 
-export default async function ProductDetailPage({
-  params,
-}: {
-  params: { id: string };
+// Step 1: Update the props to expect a Promise
+export default async function ProductDetailPage(props: {
+  params: Promise<{ id: string }>;
 }) {
+  // Step 2: Await the params to get the actual object
+  const { params } = await props;
+
+  // The rest of your code is fine
   await connectDB();
 
   const products = await Product.find().lean();
