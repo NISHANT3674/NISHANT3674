@@ -5,13 +5,13 @@ import Image from "next/image";
 import Product from "@/models/product";
 import { connectDB } from "@/lib/mongodb";
 
-type Params = {
+interface PageProps {
   params: {
     id: string;
   };
-};
+}
 
-export default async function ProductDetailPage({ params }: Params) {
+export default async function ProductDetailPage({ params }: PageProps) {
   await connectDB();
 
   const products = await Product.find().lean();
