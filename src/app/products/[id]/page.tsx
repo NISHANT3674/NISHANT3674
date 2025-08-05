@@ -5,13 +5,11 @@ import Image from "next/image";
 import Product from "@/models/product";
 import { connectDB } from "@/lib/mongodb";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default async function ProductDetailPage({ params }: PageProps) {
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   await connectDB();
 
   const products = await Product.find().lean();
@@ -25,7 +23,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8 text-[#1B3F5F]">
-      <div className="flex ">
+      <div className="flex">
         <div className="w-1/2 flex items-center justify-center">
           {product.imageUrl && (
             <Image
