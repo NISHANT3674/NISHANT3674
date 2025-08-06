@@ -2,19 +2,18 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { connectDB } from "@/lib/mongodb";
-import { Product as ProductInterface } from "@/types/index";
+import { Product as ProductInterface } from "@/types";
 import ProductModel from "@/models/product";
 
-export default async function ProductDetailPage({
-  params,
-}: {
+// ✅ No Promise in the props type
+type ProductPageProps = {
   params: { id: string };
-}) {
+};
+
+export default async function ProductDetailPage({ params }: ProductPageProps) {
   await connectDB();
 
-  const products: ProductInterface[] = await ProductModel.find().lean<
-    ProductInterface[]
-  >();
+  const products = await ProductModel.find().lean<ProductInterface[]>();
 
   const index = products.findIndex((p) => p._id.toString() === params.id);
 
