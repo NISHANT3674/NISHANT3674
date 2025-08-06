@@ -2,14 +2,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { connectDB } from "@/lib/mongodb";
-import { Product as ProductInterface } from "@/types/index"; // Import the interface
-import ProductModel from "@/models/product"; // Import the Mongoose model
+import { Product as ProductInterface } from "@/types/index";
+import ProductModel from "@/models/product";
 
-export default async function ProductDetailPage(props: {
-  params: Promise<{ id: string }>;
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: { id: string };
 }) {
-  const { params } = await props;
-
   await connectDB();
 
   const products: ProductInterface[] = await ProductModel.find().lean<
