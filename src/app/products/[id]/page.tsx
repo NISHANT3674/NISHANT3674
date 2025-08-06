@@ -5,20 +5,16 @@ import { connectDB } from "@/lib/mongodb";
 import { Product as ProductInterface } from "@/types/index"; // Import the interface
 import ProductModel from "@/models/product"; // Import the Mongoose model
 
-// The props are now typed as a single object with a `params` property that is a Promise.
-// This is the correct way to handle dynamic routes in Next.js 15.
 export default async function ProductDetailPage(props: {
   params: Promise<{ id: string }>;
 }) {
-  // Await the props to get the concrete params object.
   const { params } = await props;
 
   await connectDB();
 
-  // We explicitly type the result of .find().lean() as an array of the Product interface.
-  // This tells TypeScript what kind of data is in the `products` array,
-  // resolving the `p._id is of type 'unknown'` error.
-  const products: ProductInterface[] = await ProductModel.find().lean();
+  const products: ProductInterface[] = await ProductModel.find().lean<
+    ProductInterface[]
+  >();
 
   const index = products.findIndex((p) => p._id.toString() === params.id);
 
