@@ -5,16 +5,14 @@ import { connectDB } from "@/lib/mongodb";
 import { Product as ProductInterface } from "@/types";
 import ProductModel from "@/models/product";
 
-// ✅ No Promise in the props type
-type ProductPageProps = {
+export default async function ProductDetailPage({
+  params,
+}: {
   params: { id: string };
-};
-
-export default async function ProductDetailPage({ params }: ProductPageProps) {
+}) {
   await connectDB();
 
   const products = await ProductModel.find().lean<ProductInterface[]>();
-
   const index = products.findIndex((p) => p._id.toString() === params.id);
 
   if (index === -1) return notFound();
@@ -74,7 +72,6 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         ) : (
           <div />
         )}
-
         {nextProduct ? (
           <Link
             href={`/products/${nextProduct._id}`}
