@@ -2,9 +2,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { connectDB } from "@/lib/mongodb";
-import { Product as ProductInterface } from "@/types";
+import { Product } from "@/types";
 import ProductModel from "@/models/product";
 
+// ✅ CORRECT PARAMS TYPE
 export default async function ProductDetailPage({
   params,
 }: {
@@ -12,7 +13,7 @@ export default async function ProductDetailPage({
 }) {
   await connectDB();
 
-  const products = await ProductModel.find().lean<ProductInterface[]>();
+  const products = await ProductModel.find().lean<Product[]>();
   const index = products.findIndex((p) => p._id.toString() === params.id);
 
   if (index === -1) return notFound();
