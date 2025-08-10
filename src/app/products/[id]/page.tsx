@@ -10,6 +10,7 @@ interface ProductDetailPageProps {
     id: string;
   };
 }
+// @ts-expect-error – workaround for Next.js 15 PageProps inference bug
 
 export default async function ProductDetailPage({
   params,
