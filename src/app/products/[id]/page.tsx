@@ -4,17 +4,19 @@ import Link from "next/link";
 import { connectDB } from "@/lib/mongodb";
 import ProductModel from "@/models/product";
 import { Product } from "@/types";
-import ProductDetail from "@/components/ProductDetalail";
+import ProductDetail from "@/components/ProductDetail";
 
 export default async function ProductDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params; // ✅ Await because Next.js 15 passes it as a Promise
+
   await connectDB();
 
   const products = await ProductModel.find().lean<Product[]>();
-  const index = products.findIndex((p) => p._id.toString() === params.id);
+  const index = products.findIndex((p) => p._id.toString() === id);
 
   if (index === -1) return notFound();
 
