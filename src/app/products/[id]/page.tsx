@@ -5,12 +5,15 @@ import { connectDB } from "@/lib/mongodb";
 import { Product } from "@/types";
 import ProductModel from "@/models/product";
 
-// ✅ CORRECT PARAMS TYPE
-export default async function ProductDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface ProductDetailPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function ProductDetailPage(props: ProductDetailPageProps) {
+  const { params } = props;
+
   await connectDB();
 
   const products = await ProductModel.find().lean<Product[]>();
