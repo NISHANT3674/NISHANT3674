@@ -11,9 +11,11 @@ interface ProductDetailPageProps {
   };
 }
 
-export default async function ProductDetailPage(props: ProductDetailPageProps) {
-  const { params } = props;
-
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   await connectDB();
 
   const products = await ProductModel.find().lean<Product[]>();
@@ -24,7 +26,6 @@ export default async function ProductDetailPage(props: ProductDetailPageProps) {
   const product = products[index];
   const prevProduct = products[index - 1];
   const nextProduct = products[index + 1];
-
   return (
     <main className="max-w-3xl mx-auto px-4 py-8 text-[#1B3F5F]">
       <div className="flex">
