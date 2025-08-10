@@ -5,18 +5,19 @@ import { connectDB } from "@/lib/mongodb";
 import { Product } from "@/types";
 import ProductModel from "@/models/product";
 
-interface ProductDetailPageProps {
+// 1️⃣ Import Next.js's built-in type
+import type { PageProps } from "next";
+
+// 2️⃣ Extend and override params inside
+interface ProductDetailPageProps extends PageProps {
   params: {
     id: string;
   };
 }
-// @ts-expect-error – workaround for Next.js 15 PageProps inference bug
 
 export default async function ProductDetailPage({
   params,
-}: {
-  params: { id: string };
-}) {
+}: ProductDetailPageProps) {
   await connectDB();
 
   const products = await ProductModel.find().lean<Product[]>();
@@ -27,6 +28,7 @@ export default async function ProductDetailPage({
   const product = products[index];
   const prevProduct = products[index - 1];
   const nextProduct = products[index + 1];
+
   return (
     <main className="max-w-3xl mx-auto px-4 py-8 text-[#1B3F5F]">
       <div className="flex">
