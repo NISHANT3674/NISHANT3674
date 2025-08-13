@@ -5,6 +5,7 @@ import { connectDB } from "@/lib/mongodb";
 import ProductModel from "@/models/product";
 import { Product } from "@/types";
 import ProductDetail from "@/components/ProductDetail";
+import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 
 export default async function ProductDetailPage({
   params,
@@ -25,26 +26,25 @@ export default async function ProductDetailPage({
   const nextProduct = index < products.length - 1 ? products[index + 1] : null;
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8">
-      <ProductDetail product={{ ...product, _id: product._id.toString() }} />
-
-      <div className="flex justify-between mt-8">
+    <main className="max-w-5xl mx-auto  pt-2">
+      <div className="flex justify-between items-center mt-8">
         {prevProduct ? (
           <Link
             href={`/products/${prevProduct._id}`}
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline p-2"
           >
-            ← {prevProduct.name}
+            <FaCircleArrowLeft size={50} color="#1B3F5F" />
           </Link>
         ) : (
           <div />
         )}
+        <ProductDetail product={{ ...product, _id: product._id.toString() }} />
         {nextProduct ? (
           <Link
             href={`/products/${nextProduct._id}`}
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline p-2"
           >
-            {nextProduct.name} →
+            <FaCircleArrowRight size={50} color="#1B3F5F" />
           </Link>
         ) : (
           <div />

@@ -4,6 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./sliderStyles.css"; // custom styles
 
 type Product = {
   _id: string;
@@ -20,16 +27,25 @@ export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const colors = [
+    "#FDF6EC", // soft peach
+    "#EAF4F4", // mint
+    "#FFF8E7", // light cream
+    "#F0EBF8", // lavender
+    "#E7F0FD", // baby blue
+    "#FDECEF", // blush pink
+  ];
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const [res] = await Promise.all([
           fetch("/api/products"),
-          new Promise((resolve) => setTimeout(resolve, 1000)), // Always wait 2.5s
+          new Promise((resolve) => setTimeout(resolve, 1000)),
         ]);
         const data = await res.json();
         if (data.success) {
-          setProducts(data.products.slice(0, 3));
+          setProducts(data.products); // all products
         }
       } catch (err) {
         console.error("Failed to fetch products", err);
@@ -90,33 +106,76 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products */}
-
       <section className="py-16 px-4 sm:px-6 bg-[#F9FAFB]">
         <h2 className="text-xl sm:text-2xl font-bold text-center mb-10">
           Featured Products
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {products.map((p) => (
-            <Link key={p._id} href={`/products/${p._id}`}>
-              <div className="bg-[#09416235] p-4 border border-transparent rounded shadow-sm">
-                {p.imageUrl && (
-                  <Image
-                    src={`/products/${p.imageUrl}.png`}
-                    alt={p.name}
-                    width={300}
-                    height={200}
-                    className="w-full h-60 object-contain drop-shadow-xl/25 rounded mb-4"
-                  />
-                )}
-                <h3 className="font-semibold text-lg text-[#1B3F5F]">
-                  {p.name}
-                </h3>
-                <p className="text-sm text-gray-700 mb-1">
-                  <strong>Category:</strong> {p.category}
-                </p>
-              </div>
-            </Link>
-          ))}
+
+        <div className="relative max-w-6xl mx-auto">
+          {/* Navigation Buttons */}
+          <div className="swiper-button-prev custom-nav"></div>
+          <div className="swiper-button-next custom-nav"></div>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+            }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            centeredSlides={true}
+            spaceBetween={30}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                centeredSlides: false, // No peeking on mobile
+              },
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            className="featured-slider"
+          >
+            {products.map((p, index) => (
+              <SwiperSlide
+                key={p._id}
+                className="transition-transform duration-300 ease-in-out"
+              >
+                <Link href={`/products/${p._id}`}>
+                  <div
+                    className=" rounded-2xl shadow-lg p-4 flex flex-col items-center"
+                    style={{ backgroundColor: colors[index % colors.length] }}
+                  >
+                    {p.imageUrl && (
+                      <div className="relative w-full h-48">
+                        <Image
+                          src={`/products/${p.imageUrl}.png`}
+                          alt={p.name}
+                          fill
+                          className="object-contain rounded drop-shadow-xl/25"
+                        />
+                      </div>
+                    )}
+                    <h3 className="mt-4 font-semibold text-center">{p.name}</h3>
+                    <p className="text-sm text-gray-600 text-center">
+                      {p.category}
+                    </p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Pagination */}
+          <div className="swiper-pagination mt-3 p-2 items-center w-full"></div>
         </div>
       </section>
 
