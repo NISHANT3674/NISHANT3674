@@ -12,43 +12,46 @@ export default async function ProductDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params; // ✅ Await because Next.js 15 passes it as a Promise
+  const { id } = await params;
 
   await connectDB();
 
   const products = await ProductModel.find().lean<Product[]>();
-  const index = products.findIndex((p) => p._id.toString() === id);
+  if (!products.length) return notFound();
 
+  const index = products.findIndex((p) => p._id.toString() === id);
   if (index === -1) return notFound();
 
   const product = products[index];
-  const prevProduct = index > 0 ? products[index - 1] : null;
-  const nextProduct = index < products.length - 1 ? products[index + 1] : null;
+
+  // ♻ Infinite loop logic
+  const prevProduct =
+    index === 0 ? products[products.length - 1] : products[index - 1];
+  const nextProduct =
+    index === products.length - 1 ? products[0] : products[index + 1];
 
   return (
-    <main className="max-w-5xl mx-auto  pt-2">
-      <div className="flex justify-between items-center mt-8">
-        {prevProduct ? (
-          <Link
-            href={`/products/${prevProduct._id}`}
-            className="text-blue-600 hover:underline p-2"
-          >
-            <FaCircleArrowLeft size={50} color="#1B3F5F" />
-          </Link>
-        ) : (
-          <div />
-        )}
-        <ProductDetail product={{ ...product, _id: product._id.toString() }} />
-        {nextProduct ? (
-          <Link
-            href={`/products/${nextProduct._id}`}
-            className="text-blue-600 hover:underline p-2"
-          >
-            <FaCircleArrowRight size={50} color="#1B3F5F" />
-          </Link>
-        ) : (
-          <div />
-        )}
+    <main className="max-w-6xl mx-auto px-4 py-6">
+      {/* Product Detail */}
+      <ProductDetail product={{ ...product, _id: product._id.toString() }} />
+
+      {/* Navigation Arrows */}
+      <div className="mt-8 flex justify-between items-center">
+        <Link
+          href={`/products/${prevProduct._id}`}
+          className="flex items-center gap-2 text-blue-600 dark:text-yellow-300 hover:underline"
+        >
+          <FaCircleArrowLeft size={40} className="drop-shadow-sm" />
+          <span className="hidden sm:inline">{prevProduct.name}</span>
+        </Link>
+
+        <Link
+          href={`/products/${nextProduct._id}`}
+          className="flex items-center gap-2 text-blue-600 dark:text-yellow-300 hover:underline"
+        >
+          <span className="hidden sm:inline">{nextProduct.name}</span>
+          <FaCircleArrowRight size={40} className="drop-shadow-sm" />
+        </Link>
       </div>
     </main>
   );

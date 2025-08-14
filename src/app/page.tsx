@@ -4,21 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "./sliderStyles.css"; // custom styles
+import FeaturedProductsSlider from "@/components/FeaturedProductsSlider";
 
 type Product = {
   _id: string;
   name: string;
-  description?: string;
-  composition?: string;
-  dosage?: string;
-  indications?: string[] | string;
   category?: string;
   imageUrl?: string;
 };
@@ -26,15 +16,6 @@ type Product = {
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const colors = [
-    "#FDF6EC", // soft peach
-    "#EAF4F4", // mint
-    "#FFF8E7", // light cream
-    "#F0EBF8", // lavender
-    "#E7F0FD", // baby blue
-    "#FDECEF", // blush pink
-  ];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -45,7 +26,7 @@ export default function HomePage() {
         ]);
         const data = await res.json();
         if (data.success) {
-          setProducts(data.products); // all products
+          setProducts(data.products);
         }
       } catch (err) {
         console.error("Failed to fetch products", err);
@@ -61,7 +42,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-white text-[#1B3F5F]">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="bg-[#eaf3f7] py-16 px-4 text-center">
         <div>
           <Image
@@ -110,76 +91,10 @@ export default function HomePage() {
         <h2 className="text-xl sm:text-2xl font-bold text-center mb-10">
           Featured Products
         </h2>
-
-        <div className="relative max-w-6xl mx-auto">
-          {/* Navigation Buttons */}
-          <div className="swiper-button-prev custom-nav"></div>
-          <div className="swiper-button-next custom-nav"></div>
-
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            pagination={{
-              el: ".swiper-pagination",
-              clickable: true,
-            }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop={true}
-            centeredSlides={true}
-            spaceBetween={30}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                centeredSlides: false, // No peeking on mobile
-              },
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            className="featured-slider"
-          >
-            {products.map((p, index) => (
-              <SwiperSlide
-                key={p._id}
-                className="transition-transform duration-300 ease-in-out"
-              >
-                <Link href={`/products/${p._id}`}>
-                  <div
-                    className=" rounded-2xl shadow-lg p-4 flex flex-col items-center"
-                    style={{ backgroundColor: colors[index % colors.length] }}
-                  >
-                    {p.imageUrl && (
-                      <div className="relative w-full h-48">
-                        <Image
-                          src={`/products/${p.imageUrl}.png`}
-                          alt={p.name}
-                          fill
-                          className="object-contain rounded drop-shadow-xl/25"
-                        />
-                      </div>
-                    )}
-                    <h3 className="mt-4 font-semibold text-center">{p.name}</h3>
-                    <p className="text-sm text-gray-600 text-center">
-                      {p.category}
-                    </p>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Pagination */}
-          <div className="swiper-pagination mt-3 p-2 items-center w-full"></div>
-        </div>
+        <FeaturedProductsSlider products={products} />
       </section>
 
-      {/* Contact CTA */}
+      {/* Contact */}
       <section className="py-16 px-4 sm:px-6 bg-[#E6F2F6] text-center">
         <h2 className="text-xl sm:text-2xl font-bold mb-4">Need help?</h2>
         <p className="mb-6 text-[#4CA1B6] text-base sm:text-lg">

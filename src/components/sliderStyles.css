@@ -26,8 +26,8 @@
 
 /* Pagination */
 .featured-slider .swiper-pagination {
+    width: 100vw;
     position: relative !important;
-    margin-top: 20px;
 }
 
 /* Navigation buttons outside */
